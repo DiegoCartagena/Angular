@@ -1,0 +1,62 @@
+<div class="container fixed-top colorBody1">
+<nav class="navbar navbar-expand-lg navbar-light colonavbar2 mt-1">
+    <a *ngIf="!modalService.online && modalService.ojo2" class="navbar-brand ml-3" >
+        <img (click)="onClick1()" *ngIf="ojo" src="../../../assets/img/ojo.png" width="40" height="40"  loading="lazy">
+        <img (click)="onClick2()" *ngIf="!ojo" src="../../../assets/img/ojo.png" width="40" height="40"  loading="lazy">
+
+      </a>
+      <a *ngIf="modalService.online || !modalService.ojo2" class="navbar-brand ml-3" >
+        <img  src="../../../assets/img/ojo.png" width="40" height="40"  loading="lazy">
+      </a>
+    <a class="navbar-brand colorName4 ml-3" >
+        <strong class="text-uppercase federica6">Diego Cartagena</strong>
+    </a>
+    <button class="navbar-toggler colorBody mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container text-justify ml-5 mr-5">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item mr-1 ml-1" routerLinkActive="active" >
+          <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/inicio']"  >Portada <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item  mr-1 ml-1" routerLinkActive="active" >
+            <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/noticias']" >Noticias <span class="sr-only">(current)</span></a>
+          </li>
+          <!--*ngIf="usuarioService.autentificado"-->
+          <li *ngIf="usuarioService.autentificado" class="nav-item  mr-1 ml-1" routerLinkActive="active" >
+            <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/mensajes']" >Mensajes <span class="ml-2">({{mensajes.suma}})</span></a>
+          </li>
+          <li *ngIf="usuarioService.autentificado" class="nav-item  mr-1 ml-1" routerLinkActive="active" >
+            <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/ajustes']">Ajustes <i class="fas fa-user-cog ml-2"></i></a>
+            
+          </li>
+      </ul>
+      <div class="text-center mr-5 ml-5">
+      <i *ngIf="login1" (click)="entrar()" data-toggle="tooltip" data-placement="left" title="Admin Login" class="fas fa-biohazard fa-lg mr-5 colorName3" ></i>
+      <div (keyup.enter)="inputLogin()" class="input-group sm mr-4 ml-5">
+        <input *ngIf="input1" type="password" id="focusClave" [(ngModel)]="clave" name="clave" placeholder="press enter" class="form-control backInput15" aria-describedby="inputGroup-sizzing-sm" >
+      </div>
+
+      <i (click)="logOut()" *ngIf="modalService.online" class="fas fa-sign-out-alt fa-lg colorName3 cursor7 mr-1 ml-1"></i>
+      <i *ngIf="modalService.online" class="fas fa-wifi fa-lg colorName3 mr-1 ml-1 animated-pulse infinite"></i>
+    </div>
+      <div class="row">
+          <div class="col">
+              <p class="m-2">
+            <button (click)="alerta()" class="btn btn-outline-success my-2" type="button">
+                <span class="badge badge-warning text-uppercase">Contacto</span>
+            </button>
+        </p>  
+        </div>
+      </div>
+        
+    </div>
+
+   <!-- <i (click)="carrito()"class="fas fa-shopping-cart"></i>-->
+
+
+    </div>
+  </nav>
+</div>
+<app-modals></app-modals>

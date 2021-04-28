@@ -1,0 +1,64 @@
+<div class="container fixed-bottom colorBody1">
+    <div class="container text-center colorNavbar2">
+        <button (click)="privacidad()" type="button" class="btn btn-warning btn-sm cookies8 mt-n1 " data-toggle="modal">
+        
+            <u>Politicas de Privacidad & Cookies</u>                
+        
+        </button>
+        <div class="row">
+        <div class="col">
+           
+          <a (click)="WhatsApp()" class="cursor7">
+            <i class="fab fa-whatsapp mr-3 ml-3"></i>
+          </a>
+          <a href="https://www.facebook.com" target="_blank">
+            <i class="fab fa-facebook mr-3"></i>
+          </a>
+          <a href="mailto:diegocartagena4b2015@gmail.com" target="_blank">
+            <i class="fas fa-envelope mr-3"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank">
+            <i class="fab fa-linkedin-in mr-3"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram mr-3"></i>
+          </a>
+          <a href="https://www.twitter.com/" target="_blank">
+            <i class="fab fa-twitter mr-3"></i>
+          </a>
+        </div>
+      </div>
+      <p class="mb-1">
+          <small class="text-muted colorName3">
+            Copyrigth &copy;&nbsp;Diego Cartagena Navarrete {{year}}&nbsp;Todos los derechos reservados.
+          </small>
+      </p>
+</div>
+
+</div>
+<div class="modal fade mt-5 py-5" id="privacidad" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content colorModal11">
+      
+        <div class="container backModal12">
+      <div class="modal-body text-center colorTexto10">
+        <h4 class="colorName3 text-uppercase mb-4">
+          <u>Politica de privacidad y Cookies</u>
+        </h4>
+          <p class="font-weight-light text-justify">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias ipsam veritatis blanditiis aliquid beatae exercitationem voluptatum magni aut vero quaerat eos a, eius nobis optio rem mollitia iste quae sunt!
+          </p>
+         <div class="container text-center">
+          <button *ngIf="modalService.privacidad" (click)="salir()" class="btn btn-outline-warning colorName3"
+            type="button">
+            <i class="fas fa-check"></i>
+          </button>
+          <button *ngIf="!modalService.privacidad" (click)="irAlerta()" class="btn btn-outline-warning colorName3"
+            type="button">
+            <i class="fas fa-check"></i>
+          </button>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
